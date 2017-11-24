@@ -11,7 +11,7 @@ import com.wmak.restaurant.impl.entity.UserEntity;
 public interface UserDao extends JpaRepository<UserEntity, String> {
 
 	@Modifying(clearAutomatically = true)
-	@Query("UPDATE OrderDao d SET d.name = ?2 WHERE d.id = ?1")
-	void updateUser(String id, String userName);
+	@Query("UPDATE OrderDao d SET d.password = ?2, d.email = ?3 WHERE d.id = ?1")
+	void updateUser(String id, String password, String email);
 
 }
