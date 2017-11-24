@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.wmak.restaurant.impl.entity.DishEntity;
 import com.wmak.restaurant.impl.entity.UserEntity;
+
 import com.wmak.restaurant.impl.repos.DishDao;
 import com.wmak.restaurant.impl.repos.OrderDao;
 import com.wmak.restaurant.impl.repos.UserDao;
@@ -31,6 +32,7 @@ public class AdminService implements AdminServiceInterface {
 
 	@Override
 	public void deleteUser(User user) {
+
 
 		String id = user.getId();
 		userDao.delete(id);

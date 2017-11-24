@@ -24,7 +24,6 @@ public class DishEntity {
 	private double price;
 	private String category;
 
-	private List<IngredientEntity> listOfIngredients;
 
 	public DishEntity() {
 		super();
@@ -36,7 +35,6 @@ public class DishEntity {
 		this.name = name;
 		this.price = price;
 		this.category = category;
-		this.listOfIngredients = new LinkedList<>();
 	}
 
 	public String getId() {
@@ -71,12 +69,5 @@ public class DishEntity {
 		this.price = price;
 	}
 
-	public List<IngredientEntity> getListOfIngredients() {
-		return listOfIngredients;
-	}
-
-	public void setListOfIngredients(List<IngredientEntity> listOfIngredients) {
-		this.listOfIngredients = listOfIngredients;
-	}
 
 }
