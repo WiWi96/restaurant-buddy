@@ -1,19 +1,25 @@
 package com.wmak.restaurant.impl.user.service;
 
+import java.util.List;
+import io.swagger.model.Dish;
+import io.swagger.model.Order;
+
 public interface UserServiceInterface {
 
-	void makeNewOrder();
+	Order makeNewOrder(String userId, Order order);
 
-	void deleteOrder();
+	void deleteOrder(String userId, String orderId);
 
-	void addDishToOrder();
+	Order addDishToOrder(String dishId, String orderId);
 
-	void payForOrder();
+	Order getOrder(String userId, String orderId);
+	
+	void modifyOrder(String userId, String orderId);
 
-	void editOrder();
+	Dish getDish(String id);
 
-	void getDishDetails();
-
-	void findOrder();
+	List<Dish> allUserDishes(String id);
+	
+	List<Order> allUserOrders(String id);
 
 }
