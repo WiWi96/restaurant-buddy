@@ -20,17 +20,30 @@ public class OrderEntity {
 	@GeneratedValue(generator = "uuid2")
 	@GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
 	private String id;
+	private String tableId;
 	private List<DishEntity> listOfDishes;
 
 	public OrderEntity() {
 		this.listOfDishes = new LinkedList<>();
 	}
 
-	public OrderEntity(String id, List<DishEntity> listOfDishes) {
-		super();
+
+	public OrderEntity(String id, String tableId, List<DishEntity> listOfDishes) {
 		this.id = id;
+		this.tableId = tableId;
 		this.listOfDishes = listOfDishes;
 	}
+
+
+	public String getTableId() {
+		return tableId;
+	}
+
+
+	public void setTableId(String tableId) {
+		this.tableId = tableId;
+	}
+
 
 	public String getId() {
 		return id;

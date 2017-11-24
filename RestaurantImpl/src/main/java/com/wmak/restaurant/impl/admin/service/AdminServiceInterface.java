@@ -6,29 +6,36 @@ import com.wmak.restaurant.impl.entity.DishEntity;
 import com.wmak.restaurant.impl.entity.UserEntity;
 
 import io.swagger.model.Dish;
+import io.swagger.model.Order;
 import io.swagger.model.User;
 
 public interface AdminServiceInterface {
 
-	void addNewUser(User user);
+	User addNewUser(User user);
+
+	User findUserByID(String id);
 
 	void deleteUser(User user);
 
-	void modifyUser(User user, String newUsername);
+	void modifyUser(User user);
 
-	void addNewDishToMenu(Dish dish, String name, double price, String category);
+	Dish addNewDishToMenu(Dish dish);
+
+	Dish findDishByID(String id);
 
 	void deleteDishFromMenu(Dish dish);
 
-	void modifyDish();
+	void modifyDish(Dish dish);
+	
+	Order findOrderByID(String id);
+	
+	void deleteOrder(String id);
+	
+	List<User> getListOfUsers();
 
-	DishEntity findDishByID(String id);
+	List<Order> getListOfOrders();
 
-	UserEntity findUserByID(String id);
+	List<Dish> getListOfDishes();
 
-	List getListOfUsers();
-
-	List getListOfDishes();
-
-	List getListOfDishesByCategory(String category);
+	List<Dish> getListOfDishesByCategory(String category);
 }
