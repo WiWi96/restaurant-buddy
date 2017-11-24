@@ -1,0 +1,25 @@
+{
+  "name": "restaurant-buddy",
+  "version": "1.0.0",
+  "description": "The WMAK project for Chillout Hackathon",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WiWi96/restaurant-buddy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WiWi96/restaurant-buddy/issues"
+  },
+  "homepage": "https://github.com/WiWi96/restaurant-buddy#readme"
+}
