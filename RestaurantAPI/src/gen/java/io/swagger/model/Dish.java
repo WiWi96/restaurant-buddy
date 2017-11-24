@@ -1,3 +1,4 @@
+
 /*
  * WMAP application
  *  Manage your restaurant like a boss
@@ -167,4 +168,3 @@ public Dish id(String id) {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

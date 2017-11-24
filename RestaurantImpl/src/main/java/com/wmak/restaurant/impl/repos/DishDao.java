@@ -5,7 +5,6 @@ import javax.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 import com.wmak.restaurant.impl.entity.DishEntity;
 
@@ -15,8 +14,5 @@ public interface DishDao extends JpaRepository<DishEntity, String> {
 	@Modifying(clearAutomatically = true)
 	@Query("UPDATE DishEntity d SET d.name = ?2 WHERE d.id = ?1")
 	void updateDish(String id, String name);
-
-	@Query("SELECT DishEntity d WHERE d.category=category")
-	void findDishesByCategory(@Param("category") String category);
 
 }

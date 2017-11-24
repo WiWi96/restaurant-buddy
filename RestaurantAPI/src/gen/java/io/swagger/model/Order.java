@@ -1,3 +1,4 @@
+
 /*
  * WMAP application
  *  Manage your restaurant like a boss
@@ -154,4 +155,3 @@ public Order id(String id) {
     return o.toString().replace("\n", "\n    ");
   }
 }
-

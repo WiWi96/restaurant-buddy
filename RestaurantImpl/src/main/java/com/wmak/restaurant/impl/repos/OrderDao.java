@@ -5,7 +5,6 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.wmak.restaurant.impl.entity.DishEntity;
 import com.wmak.restaurant.impl.entity.OrderEntity;
 
 public interface OrderDao extends JpaRepository<OrderEntity, String> {
