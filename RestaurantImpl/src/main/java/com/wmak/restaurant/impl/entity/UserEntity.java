@@ -19,6 +19,7 @@ public class UserEntity {
 	@Id
 	@GeneratedValue(generator = "uuid2")
 	@GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
+	private static String generalID;
 	private String id;
 	private String username;
 	private String password;
@@ -29,12 +30,13 @@ public class UserEntity {
 		this.ordersOfUser = new LinkedList<>();
 	}
 
-	public UserEntity(String id, String username, String password, List<OrderEntity> ordersOfUser) {
+	public UserEntity(String id, String username, String password) {
 		super();
-		this.id = id;
+		this.id = generalID;
+		// generalID++;
 		this.username = username;
 		this.password = password;
-		this.ordersOfUser = ordersOfUser;
+		this.ordersOfUser = new LinkedList<>();
 	}
 
 	public String getId() {
