@@ -4,3 +4,8 @@ body {
 body nav {
   background: red;
 }
+.login {
+  background: url("/images/restaurant-back.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-color: #a1a1a1;
+}
