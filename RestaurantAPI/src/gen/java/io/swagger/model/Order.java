@@ -15,14 +15,10 @@ package io.swagger.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.UUID;
-import javax.validation.constraints.*;
 
 /**
  * Order
@@ -30,10 +26,10 @@ import javax.validation.constraints.*;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-11-24T19:28:58.171Z")
 public class Order   {
   @JsonProperty("id")
-  private UUID id = null;
+  private String id = null;
 
   @JsonProperty("tableId")
-  private UUID tableId = null;
+  private String tableId = null;
 
   @JsonProperty("listOfDishes")
   private List<Dish> listOfDishes = null;
@@ -43,13 +39,13 @@ public class Order   {
 	this.listOfDishes = new LinkedList<>();
 }
 
-  public Order(UUID id, UUID tableId, List<Dish> listOfDishes) {
+  public Order(String id, String tableId, List<Dish> listOfDishes) {
 	this.id = id;
 	this.tableId = tableId;
 	this.listOfDishes = listOfDishes;
 }
 
-public Order id(UUID id) {
+public Order id(String id) {
     this.id = id;
     return this;
   }
@@ -60,15 +56,15 @@ public Order id(UUID id) {
    **/
   @JsonProperty("id")
   @ApiModelProperty(value = "")
-  public UUID getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(String id) {
     this.id = id;
   }
 
-  public Order tableId(UUID tableId) {
+  public Order tableId(String tableId) {
     this.tableId = tableId;
     return this;
   }
@@ -79,11 +75,11 @@ public Order id(UUID id) {
    **/
   @JsonProperty("tableId")
   @ApiModelProperty(value = "")
-  public UUID getTableId() {
+  public String getTableId() {
     return tableId;
   }
 
-  public void setTableId(UUID tableId) {
+  public void setTableId(String tableId) {
     this.tableId = tableId;
   }
 

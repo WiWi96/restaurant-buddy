@@ -3,11 +3,16 @@ package com.wmak.restaurant.impl.admin.service;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.wmak.restaurant.impl.entity.DishEntity;
 import com.wmak.restaurant.impl.entity.UserEntity;
+import com.wmak.restaurant.impl.repos.UserDao;
 
 public class AdminService implements AdminServiceInterface {
 
+	@Autowired
+	private UserDao userDao;
 	private List<UserEntity> listOfUsers;
 	private List<DishEntity> listOfDishes;
 
@@ -40,6 +45,7 @@ public class AdminService implements AdminServiceInterface {
 			if (ue.getId().equals(id))
 				if (listOfUsers.remove(ue))
 					return true;
+		userDao.
 
 		return false;
 	}

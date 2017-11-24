@@ -15,12 +15,8 @@ package io.swagger.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.BigDecimal;
-import java.util.UUID;
-import javax.validation.constraints.*;
+import java.math.double;
 
 /**
  * Dish
@@ -28,7 +24,7 @@ import javax.validation.constraints.*;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-11-24T19:28:58.171Z")
 public class Dish   {
   @JsonProperty("id")
-  private UUID id = null;
+  private String id = null;
 
   @JsonProperty("name")
   private String name = null;
@@ -37,19 +33,19 @@ public class Dish   {
   private String category = null;
 
   @JsonProperty("price")
-  private BigDecimal price = null;
+  private double price = null;
 
   
   public Dish() {}
 
-  public Dish(UUID id, String name, String category, BigDecimal price) {
+  public Dish(String id, String name, String category, double price) {
 	this.id = id;
 	this.name = name;
 	this.category = category;
 	this.price = price;
 }
 
-public Dish id(UUID id) {
+public Dish id(String id) {
     this.id = id;
     return this;
   }
@@ -60,11 +56,11 @@ public Dish id(UUID id) {
    **/
   @JsonProperty("id")
   @ApiModelProperty(value = "")
-  public UUID getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(String id) {
     this.id = id;
   }
 
@@ -106,7 +102,7 @@ public Dish id(UUID id) {
     this.category = category;
   }
 
-  public Dish price(BigDecimal price) {
+  public Dish price(double price) {
     this.price = price;
     return this;
   }
@@ -117,11 +113,11 @@ public Dish id(UUID id) {
    **/
   @JsonProperty("price")
   @ApiModelProperty(value = "")
-  public BigDecimal getPrice() {
+  public double getPrice() {
     return price;
   }
 
-  public void setPrice(BigDecimal price) {
+  public void setPrice(double price) {
     this.price = price;
   }
 
