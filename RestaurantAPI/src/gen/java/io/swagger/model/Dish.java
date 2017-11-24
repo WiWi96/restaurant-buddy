@@ -17,7 +17,6 @@ package io.swagger.model;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModelProperty;
-import java.math.double;
 
 /**
  * Dish
@@ -34,7 +33,7 @@ public class Dish   {
   private String category = null;
 
   @JsonProperty("price")
-  private double price = null;
+  private double price;
 
   
   public Dish() {}
