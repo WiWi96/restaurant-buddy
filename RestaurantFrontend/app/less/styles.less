@@ -1,15 +1,39 @@
 @default-background:  rgb(161, 161, 161);
 body {
     background: blue;
-
-
-    nav {
-        background: red;
+     
+}
+.btn-primary{
+    background-color: rgb(134, 131, 122);  
+    outline: none;
+    border: none; 
+    &:hover{
+        background-color: rgb(53, 52, 52) !important;
+        outline: none;
+    }
+    
+    &:focus{
+        outline: none !important;      
+    }
+    
+    &:active{
+    
+        outline: none;
+        border: none;
     }
 }
 
 .login {
+    align-items: center;
+    justify-content: center;
     background: url("/images/restaurant-back.jpg") no-repeat center center fixed;
     background-size: cover;
     background-color: @default-background;
+    a{
+        color: white;
+    }
+    .vcenter {    
+        background: url("/images/semi-transparent-back.png");
+        padding: 20px;        
+    }
 }

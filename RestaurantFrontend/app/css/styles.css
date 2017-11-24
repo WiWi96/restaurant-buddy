@@ -1,11 +1,33 @@
 body {
   background: blue;
 }
-body nav {
-  background: red;
+.btn-primary {
+  background-color: #86837a;
+  outline: none;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #353434 !important;
+  outline: none;
+}
+.btn-primary:focus {
+  outline: none !important;
+}
+.btn-primary:active {
+  outline: none;
+  border: none;
 }
 .login {
+  align-items: center;
+  justify-content: center;
   background: url("/images/restaurant-back.jpg") no-repeat center center fixed;
   background-size: cover;
   background-color: #a1a1a1;
+}
+.login a {
+  color: white;
+}
+.login .vcenter {
+  background: url("/images/semi-transparent-back.png");
+  padding: 20px;
 }
