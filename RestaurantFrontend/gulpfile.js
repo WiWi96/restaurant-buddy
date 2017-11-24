@@ -8,7 +8,7 @@ var gulpIf = require('gulp-if');
 var runSequence = require('run-sequence');
 
 gulp.task('start', function (callback) {
-    runSequence(['less', 'useref', 'browserSync', 'watch'],
+    runSequence(['less', 'browserSync', 'watch'],
     callback
   )
 });
