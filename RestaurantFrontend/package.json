@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "The WMAK project for Chillout Hackathon",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta.2"
+  },
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
