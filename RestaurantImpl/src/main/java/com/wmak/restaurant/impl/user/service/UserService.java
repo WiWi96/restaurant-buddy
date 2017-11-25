@@ -1,7 +1,9 @@
 package com.wmak.restaurant.impl.user.service;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.wmak.restaurant.impl.entity.Dish;
 import com.wmak.restaurant.impl.entity.Order;
@@ -11,7 +13,7 @@ import com.wmak.restaurant.impl.repos.DishDao;
 import com.wmak.restaurant.impl.repos.OrderDao;
 import com.wmak.restaurant.impl.repos.UserDao;
 
-
+@Service
 public class UserService implements UserServiceInterface {
 	private UserDao userDao;
 	private DishDao dishDao;
@@ -67,12 +69,12 @@ public class UserService implements UserServiceInterface {
 	@Override
 	public List<Dish> allUserDishes(String id) {
 		User user = userDao.findOne(id);
-//		List<Dish> dishes = new LinkedList<>();
-//		for (Order order : user.getOrdersOfUser()) {
-//			for (Dish dish : order.getListOfDishes()) {
-//				dishes.add(dish);
-//			}
-//		}
+		// List<Dish> dishes = new LinkedList<>();
+		// for (Order order : user.getOrdersOfUser()) {
+		// for (Dish dish : order.getListOfDishes()) {
+		// dishes.add(dish);
+		// }
+		// }
 		return null;
 	}
 
@@ -86,8 +88,14 @@ public class UserService implements UserServiceInterface {
 	public Order makeNewOrder(String userId, Order order) {
 		orderDao.save(order);
 		User user = userDao.findOne(userId);
-//		user.getOrdersOfUser().add(order);
+		// user.getOrdersOfUser().add(order);
 		return order;
+	}
+
+	public List<Order> getListOfOrders(String id) {
+		//////////
+		return null;
+
 	}
 
 	@Override
@@ -103,6 +111,5 @@ public class UserService implements UserServiceInterface {
 		}
 
 	}
-
 
 }

@@ -8,57 +8,44 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.wmak.restaurant.impl.entity.Dish;
+import com.wmak.restaurant.impl.entity.Order;
 import com.wmak.restaurant.impl.user.service.UserService;
-
 
 @Controller
 @RequestMapping(value = "/user")
 public class UserWebController {
 
-//	@Autowired
-//	private UserService userService;
-//
-//	@RequestMapping(value = "/addDishToOrder", method = RequestMethod.POST)
-//	public String addDish(Model model) {
-//		model.addAttribute("dish", new Dish());
-//		return "user/addDish";
-//	}
+	@Autowired
+	private UserService userService;
 
-//	@RequestMapping(value = "/getDish/{id}", method = RequestMethod.GET)
-//	public String getDish(@PathVariable String id, Model model) {
-//		model.addAttribute("dishes", userService.findDishByID(id));
-//		return "user/dish";
-//	}
-//
-//	@RequestMapping(value = "/getOrder/{id}", method = RequestMethod.GET)
-//	public String getOrder(@PathVariable String id, Model model) {
-//		model.addAttribute("orders", userService.findOrderByID(id));
-//		return "user/order";
-//	}
-//
-//	@RequestMapping(value = "/getDishes", method = RequestMethod.GET)
-//	public String getDishes(Model model) {
-//		model.addAttribute("dishes", userService.getListOfDishes());
-//		return "user/dishes";
-//	}
-//
-//	@RequestMapping(value = "/getOrders", method = RequestMethod.GET)
-//	public String getOrders(Model model) {
-//		model.addAttribute("orders", userService.getListOfOrders());
-//		return "user/orders";
-//	}
-//
-//	@RequestMapping(value = "/makeNewOrder", method = RequestMethod.POST)
-//	public String newOrder(Model model) {
-//		model.addAttribute("order", new Order());
-//		return "user/addOrder";
-//	}
-//
-//	@RequestMapping(value = "/deleteOrder/{id}", method = RequestMethod.DELETE)
-//	public String deleteOrder(@PathVariable String orderID, String userID) {
-//		if (userService.findOrderByID(orderID) == null)
-//			return "error404/orderNotFound";
-//		userService.deleteOrder(userID, orderID);
-//		return "redirect:/user/orders";
-//	}
+	@RequestMapping(value = "/addDishToOrder/{userId}{dishId}{orderId}", method = RequestMethod.POST)
+	public String addDish(Model model) {
+		model.addAttribute("dish", new Dish());
+		return "user/addDish";
+	}
+
+	@RequestMapping(value = "/dish/{id}", method = RequestMethod.GET)
+	public String getDishByID(@PathVariable String id, Model model) {
+		model.addAttribute("dish", userService.getDish(id));
+		return "user/dish";
+	}
+
+	@RequestMapping(value = "/order/{userId}{orderId}", method = RequestMethod.GET)
+	public String getOrder(@PathVariable String userId, @PathVariable String orderId, Model model) {
+		model.addAttribute("order", userService.getOrder(userId, orderId));
+		return "user/order";
+	}
+
+	@RequestMapping(value = "/orders/{userId}", method = RequestMethod.GET)
+	public String getOrders(@PathVariable String userId, Model model) {
+		model.addAttribute("orders", userService.getListOfOrders(userId));
+		return "user/orders";
+	}
+
+	@RequestMapping(value = "/order/{userId}{order}", method = RequestMethod.POST)
+	public String makeOrder(@PathVariable String userId, @PathVariable Order order, Model model) {
+		model.addAttribute("order", userService.makeNewOrder(userId, order));
+		return "user/newOrder";
+	}
+
 }
