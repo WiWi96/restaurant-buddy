@@ -17,7 +17,6 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.wmak.restaurant.impl.admin.service.AdminService;
-import com.wmak.restaurant.impl.converters.UserConverterImpl;
 import com.wmak.restaurant.impl.entity.DishEntity;
 import com.wmak.restaurant.impl.entity.OrderEntity;
 import com.wmak.restaurant.impl.entity.UserEntity;
@@ -38,7 +37,6 @@ public class AdminServiceTest {
 	private UserDao userDao;
 	private DishDao dishDao;
 	private OrderDao orderDao;
-	private UserConverterImpl userConverter;
 	private AdminService adminService;
 
 	@Test
