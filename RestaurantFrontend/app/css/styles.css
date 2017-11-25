@@ -16,6 +16,7 @@ body {
 .btn-primary:hover {
   background-color: #7b7676;
   outline: none;
+  background: #ececec;
   height: 100%;
 }
 .navbar {
