@@ -2,9 +2,6 @@ package com.wmak.restaurant.impl.admin.service;
 
 import java.util.List;
 
-import com.wmak.restaurant.impl.entity.DishEntity;
-import com.wmak.restaurant.impl.entity.UserEntity;
-
 import io.swagger.model.Dish;
 import io.swagger.model.Order;
 import io.swagger.model.User;
@@ -15,7 +12,7 @@ public interface AdminServiceInterface {
 
 	User findUserByID(String id);
 
-	void deleteUser(User user);
+	void deleteUser(String id);
 
 	void modifyUser(User user);
 
@@ -23,14 +20,14 @@ public interface AdminServiceInterface {
 
 	Dish findDishByID(String id);
 
-	void deleteDishFromMenu(Dish dish);
+	void deleteDishFromMenu(String id);
 
 	void modifyDish(Dish dish);
-	
+
 	Order findOrderByID(String id);
-	
+
 	void deleteOrder(String id);
-	
+
 	List<User> getListOfUsers();
 
 	List<Order> getListOfOrders();

@@ -12,7 +12,6 @@ import com.wmak.restaurant.impl.converters.UserConverter;
 import com.wmak.restaurant.impl.entity.DishEntity;
 import com.wmak.restaurant.impl.entity.OrderEntity;
 import com.wmak.restaurant.impl.entity.UserEntity;
-
 import com.wmak.restaurant.impl.repos.DishDao;
 import com.wmak.restaurant.impl.repos.OrderDao;
 import com.wmak.restaurant.impl.repos.UserDao;
@@ -51,8 +50,7 @@ public class AdminService implements AdminServiceInterface {
 	}
 
 	@Override
-	public void deleteUser(User user) {
-		String id = user.getId();
+	public void deleteUser(String id) {
 		userDao.delete(id);
 	}
 
@@ -69,14 +67,19 @@ public class AdminService implements AdminServiceInterface {
 	}
 
 	@Override
-	public void deleteDishFromMenu(Dish dish) {
-		String id = dish.getId();
+	public void deleteDishFromMenu(String id) {
 		userDao.delete(id);
 	}
 
 	@Override
 	public void modifyDish(Dish dish) {
 		dishDao.updateDish(dish.getId(), dish.getName(), dish.getCategory(), dish.getPrice());
+	}
+
+	@Override
+	public void deleteOrder(String id) {
+		orderDao.delete(id);
+
 	}
 
 	@Override
@@ -90,49 +93,38 @@ public class AdminService implements AdminServiceInterface {
 		UserEntity userEntity = userDao.findOne(id);
 		return userConverter.entityToModelConverter(userEntity);
 	}
-	
-	@Override
+
 	public Order findOrderByID(String id) {
 		OrderEntity orderEntity = orderDao.findOne(id);
 		return orderConverter.entityToModelConverter(orderEntity);
 	}
 
 	@Override
-	public void deleteOrder(String id) {
-		orderDao.delete(id);
-
-	}
-	
-	@Override
 	public List<User> getListOfUsers() {
-		 List<User> listOfUsers = userDao.findAll().stream()
-														 .map(userEntity->userConverter.entityToModelConverter(userEntity))
-														 .collect(Collectors.toList());
-		 return listOfUsers;
+		List<User> listOfUsers = userDao.findAll().stream()
+				.map(userEntity -> userConverter.entityToModelConverter(userEntity)).collect(Collectors.toList());
+		return listOfUsers;
 	}
 
 	@Override
 	public List<Dish> getListOfDishes() {
-		 List<Dish> listOfDishes = dishDao.findAll().stream()
-				 								   .map(dishEntity->dishConverter.entityToModelConverter(dishEntity))
-				 								   .collect(Collectors.toList());
-		 return listOfDishes;
+		List<Dish> listOfDishes = dishDao.findAll().stream()
+				.map(dishEntity -> dishConverter.entityToModelConverter(dishEntity)).collect(Collectors.toList());
+		return listOfDishes;
 	}
 
 	@Override
 	public List<Order> getListOfOrders() {
-		 List<Order> listOfOrders = orderDao.findAll().stream()
-				   									  .map(orderEntity->orderConverter.entityToModelConverter(orderEntity))
-				   									  .collect(Collectors.toList());
-		 return listOfOrders;
+		List<Order> listOfOrders = orderDao.findAll().stream()
+				.map(orderEntity -> orderConverter.entityToModelConverter(orderEntity)).collect(Collectors.toList());
+		return listOfOrders;
 	}
 
 	@Override
 	public List<Dish> getListOfDishesByCategory(String category) {
 		List<DishEntity> list = dishDao.getDishByCategory(category);
-		List<Dish> listOfDishes = list.stream()
-				   					  .map(dishEntity->dishConverter.entityToModelConverter(dishEntity))
-				   					  .collect(Collectors.toList());
+		List<Dish> listOfDishes = list.stream().map(dishEntity -> dishConverter.entityToModelConverter(dishEntity))
+				.collect(Collectors.toList());
 		return listOfDishes;
 	}
 
