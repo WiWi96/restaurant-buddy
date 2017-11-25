@@ -3,7 +3,6 @@ package io.swagger.api;
 import io.swagger.annotations.ApiParam;
 import io.swagger.model.Dish;
 import io.swagger.model.Order;
-import java.util.String;
 import io.swagger.model.User;
 
 import javax.ws.rs.core.Context;

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Security Demo</title>
+	
+	<link rel="stylesheet" href="../static/css/blog.css" th:href="@{/css/blog.css}"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css' />	
+	<link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css' />
+	
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<!-- <style>>
+ body { */
+    background-image: url("https://www.fg-a.com/wallpapers/white-background-geo-shapes.jpg"); */
+ } 
+<!</style> -->
+<body>
+	<div class="container">
+  		 
+		<nav class="navbar navbar-default">
+		    <div class="container-fluid">
+		        <div class="navbar-header">
+		            <a class="navbar-brand" href="/">Mail Manager</a>
+		        </div>
+		        
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<div sec:authorize="hasRole('ROLE_ADMIN')">
+				    <ul class="nav navbar-nav">
+				        <li class=""><a href="/">Home</a></li>
+				        <li class=""><a href="/admin/users">Users</a></li>
+				        <li class=""><a href="/admin/emails">Emails</a></li>
+				        <li class=""><a href="/admin/teams">Teams</a></li>
+<!-- 				        <li class=""><a href="/admin/finduser">Find user</a></li> -->
+<!-- 				        <li class=""><a href="/admin/finduser">Find emails</a></li> -->
+<!-- 				        <li class=""><a href="/admin/finduser">Find team</a></li> -->
+				        
+				    </ul>
+				    </div>
+				    <div sec:authorize="hasRole('ROLE_USER')">
+				    <ul class="nav navbar-nav">
+				        <li class=""><a href="/user/">Home</a></li>
+				        <li class=""><a href="/user/inbox">Inbox</a></li>
+				        <li class=""><a href="/user/teaminbox">Team Inbox</a></li>
+				        <li class=""><a href="/user/team">Team</a></li>
+				        
+				    </ul>
+				    </div>
+				    <div class="navbar-text navbar-right">
+			            Welcome <span sec:authentication="name">Guest</span>
+				    	<form sec:authorize="isAuthenticated()" id="frmlogout" th:action="@{/logout}" method="post" class="form-inline">
+				    		| <a href="javascript:{}" onclick="document.getElementById('frmlogout').submit(); return false;">Logout</a>
+				    	</form>
+				    </div>
+				</div>
+		    </div>
+		</nav>
+		
+		<div layout:fragment="content">
+		</div>
+		
+		<footer>
+			<p>Copyright Maciej Sekta 2017</p>
+		</footer>
+	
+	</div>
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script>
+</body>
+</html>
