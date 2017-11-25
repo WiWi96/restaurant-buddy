@@ -1,11 +1,83 @@
-body {
-  background: blue;
+.sans-serif-font {
+  font-family: 'Lato', 'Segoe UI', 'Arial', sans-serif;
 }
-body nav {
-  background: red;
+html {
+  height: 100%;
+}
+body {
+  background: #ececec;
+  height: 100%;
+}
+.btn-primary {
+  background-color: #bcbcbc;
+  outline: none;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #7b7676;
+  outline: none;
+  background: #ececec;
+  height: 100%;
+}
+.navbar {
+  position: fixed;
+  width: 100%;
+  border-bottom: 3px solid #3cff00;
+  z-index: 99;
+}
+.navbar .navbar-brand {
+  font-family: 'Lato', 'Segoe UI', 'Arial', sans-serif;
+  letter-spacing: 4px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.navbar .navbar-brand:hover {
+  text-shadow: 3px 3px 0 #3cff00;
+}
+.navbar:focus {
+  outline: none !important;
+}
+.navbar:active {
+  outline: none;
+  border: none;
+}
+.navbar .nav-item:hover {
+  background-color: #3cff00;
+  border-radius: 3px;
+}
+.navbar .nav-item:hover .nav-link {
+  color: white;
+}
+.full-height {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.big-icon {
+  color: #3cff00;
+  font-size: 180px;
 }
 .login {
   background: url("/images/restaurant-back.jpg") no-repeat center center fixed;
   background-size: cover;
-  background-color: #a1a1a1;
+  background-color: #ececec;
+  display: table;
+  padding: 0;
+}
+.login .login-container {
+  display: table-cell;
+  vertical-align: middle;
+  background: rgba(255, 255, 255, 0.7);
+}
+.login .login-container .login-form {
+  border-radius: 8px;
+  background-color: white;
+  padding: 20px;
+}
+.login .login-container .login-form input {
+  background: none;
+  border: none;
+  border-bottom: 3px solid #3cff00;
 }

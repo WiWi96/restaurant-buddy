@@ -1,15 +1,98 @@
-@default-background:  rgb(161, 161, 161);
+@primary-color: #3cff00;
+@light-gray-color: #bcbcbc;
+@dark-gray-color: #7b7676;
+
+@default-background:  rgb(236, 236, 236);
+
+.sans-serif-font {
+    font-family: 'Lato', 'Segoe UI', 'Arial', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
 body {
-    background: blue;
+    background: @default-background;
+    height: 100%;
+}
 
-
-    nav {
-        background: red;
+.btn-primary{
+    background-color: @light-gray-color;  
+    outline: none;
+    border: none; 
+    &:hover{
+        background-color: @dark-gray-color;
+        outline: none;
+        background: @default-background;
+        height: 100%;
     }
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    border-bottom: 3px solid @primary-color;
+    z-index: 99;
+    .navbar-brand {
+        .sans-serif-font;
+        letter-spacing: 4px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        &:hover {
+            text-shadow: 3px 3px 0 @primary-color;
+        }
+    }
+    &:focus {
+        outline: none !important;
+    }
+    &:active {
+        outline: none;
+        border: none;
+    }
+    .nav-item {
+        &:hover {
+            background-color: @primary-color;
+            border-radius: 3px;
+            .nav-link {
+                color: white;
+            }
+        }
+    }
+}
+
+.full-height {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.big-icon {
+    color: @primary-color;
+    font-size: 180px;
 }
 
 .login {
     background: url("/images/restaurant-back.jpg") no-repeat center center fixed;
     background-size: cover;
     background-color: @default-background;
+    display: table;
+    padding: 0;
+    .login-container {
+        display: table-cell;
+        vertical-align: middle;
+        background: rgba(255, 255, 255, .7);
+        .login-form {
+            border-radius: 8px;
+            background-color: white;
+            padding: 20px;
+            input {
+                background: none;
+                border: none;
+                border-bottom: 3px solid @primary-color;
+            }
+        }
+    }
 }
