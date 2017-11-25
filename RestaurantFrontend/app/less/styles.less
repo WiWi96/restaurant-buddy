@@ -1,6 +1,9 @@
 @primary-color: #3cff00;
-@secondary-color: #7e6e50;
-@default-background: rgb(236, 236, 236);
+@light-gray-color: #bcbcbc;
+@dark-gray-color: #7b7676;
+
+@default-background:  rgb(236, 236, 236);
+
 .sans-serif-font {
     font-family: 'Lato', 'Segoe UI', 'Arial', sans-serif;
 }
@@ -14,12 +17,12 @@ body {
     height: 100%;
 }
 
-.btn-primary {
-    background-color: @primary-color;
+.btn-primary{
+    background-color: @light-gray-color;  
     outline: none;
-    border: none;
-    &:hover {
-        background-color: rgb(53, 52, 52) !important;
+    border: none; 
+    &:hover{
+        background-color: @dark-gray-color;
         outline: none;
         background: @default-background;
         height: 100%;
@@ -83,7 +86,7 @@ body {
         background: rgba(255, 255, 255, .7);
         .login-form {
             border-radius: 8px;
-            background-color: rgba(255, 255, 255, .5);
+            background-color: white;
             padding: 20px;
             input {
                 background: none;
