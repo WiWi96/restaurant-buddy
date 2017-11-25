@@ -7,7 +7,7 @@ $(function () {
                 "Access-Control-Allow-Origin": "*"
             },
             contentType: "application/json; charset=utf-8",
-            url: "//10.4.0.117:8080/admin/dishes",
+            url: "//localhost:8888",
         }).done(function (res) {
             $("#dishList").html("Działam hahaha!");
         }).fail(function (res) {
