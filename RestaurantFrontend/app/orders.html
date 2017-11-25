@@ -17,24 +17,19 @@
     <!-- Font Awesome styles -->
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css">
 
-    <meta name="description" content="Aplikacja na każdy wypad do restauracji" />
+    <meta name="description" content="Website for Your Restaurant" />
     <meta name="keywords" content="restaurant, management, clients, app" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 
 <body>
     <div id="nav"></div>
-    <div class="container full-height">
-        <div class="row text-center">
-            <div class="big-icon col-sm-12">
-                <i class="fa fa-hand-peace-o" aria-hidden="true"></i>
-            </div>
-            <div class="message-text col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-                <p>
-                    Gratulacje! Poprawnie zalogowałeś się do serwisu.
-                </p>
-            </div>
+    <div class="container">
+        <h1 class="text-right">Zamówienia</h1>
+        <hr />
+        <div class="row">
+            <div id="orderList"></div>
         </div>
     </div>
 
@@ -48,6 +43,10 @@
 
     <!-- Bootstrap -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!--build:js js/orders.min.js -->
+    <script src="js/orders.js"></script>
+    <!-- endbuild -->
 
     <!--build:js js/scripts.min.js -->
     <script src="js/scripts.js"></script>
