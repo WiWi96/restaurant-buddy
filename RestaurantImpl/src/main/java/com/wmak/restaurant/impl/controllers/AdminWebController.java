@@ -84,6 +84,7 @@ public class AdminWebController {
 		return "admin/dish";
 	}
 
+	
 	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
 	public String getUserByID(@PathVariable String id, Model model) {
 		model.addAttribute("user", adminService.findUserByID(id));
