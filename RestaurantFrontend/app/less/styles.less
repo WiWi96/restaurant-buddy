@@ -15,7 +15,12 @@ body {
     height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     .sans-serif-font;
     font-style: italic;
     font-weight: 900;
@@ -27,8 +32,8 @@ hr {
     border-color: @primary-color;
 }
 
-.btn-primary{
-    background-color: @light-gray-color;  
+.btn-primary {
+    background-color: @light-gray-color;
     outline: none;
     border: none;
     &:hover {
@@ -39,7 +44,7 @@ hr {
         cursor: pointer;
     }
     &:active {
-        background-color: #8f8d8d !important;
+        background-color: @light-gray-color !important;
         box-shadow: none!important;
         background: @default-background;
         height: 100%;
@@ -59,12 +64,12 @@ hr {
     &:hover {
         background-color: @dark-gray-color;
         outline: none;
-        background: @default-background;
+        background: #ceffbf;
         height: 100%;
         cursor: pointer;
     }
     &:active {
-        background-color: #2aac02 !important;
+        background-color: @primary-color !important;
         box-shadow: none !important;
         background: @default-background;
         height: 100%;
@@ -74,10 +79,11 @@ hr {
 
 .log {
     margin-right: 5px;
-    margin-left: 10px;    
+    margin-left: 10px;
 }
 
 .navbar {
+    min-height: 60px;
     position: fixed;
     width: 100%;
     border-bottom: 3px solid @primary-color;
@@ -90,9 +96,8 @@ hr {
         font-weight: bold;
         &:hover {
             text-shadow: 3px 3px 0 @primary-color;
-        }        
+        }
     }
-    
     .nav-item {
         &:hover {
             background-color: @primary-color;
@@ -104,7 +109,11 @@ hr {
     }
 }
 
-
+.centered-text-layout {
+    margin: 0 auto;
+    max-width: 900px;
+    text-align: center;
+}
 
 .full-height {
     display: flex;
@@ -116,6 +125,25 @@ hr {
 .big-icon {
     color: @primary-color;
     font-size: 180px;
+}
+
+#head-txt {
+    font-style: normal;
+    color: black;
+    .a {
+        color: @primary-color;
+    }
+}
+
+#reg-link {
+    color: #56b638;
+}
+
+.layout-header {
+    background: url("/images/restaurant-back-head.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-color: @default-background;
+    height: 50%;
 }
 
 .login {

@@ -17,7 +17,7 @@
 	<!-- Font Awesome styles -->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.min.css">
 
-	<meta name="description" content="Website for Your Restaurant" />
+	<meta name="description" content="Aplikacja na każdy wypad do restauracji" />
 	<meta name="keywords" content="restaurant, management, clients, app" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -27,23 +27,34 @@
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="#">Restaurant Buddy</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-		aria-expanded="false" aria-label="Wyświetl menu">
-		<span class="navbar-toggler-icon"></span>
-	</button>
+		 aria-expanded="false" aria-label="Wyświetl menu">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 		<div class="navbar-collapse collapse" id="navbarSupportedContent">
 			<ul class="nav navbar-nav ml-auto">
-			<li><a href="/login.html"><button type=" button" id="login" class="btn btn-secondary btn-lg log ">Zaloguj</button></a></li>
-			<li><a href=""><button type="button " id="register" class="btn btn-primary btn-lg log ">Zarejestruj</button></a></li>
-		</ul>
+				<li>
+					<a href="/login.html" class="btn btn-secondary log " role="button" aria-pressed="true"> Zaloguj	</a>
+				</li>
+				<li>
+						<a href="#" class="btn btn-primary log " role="button" aria-pressed="true">Zarejestruj </a>
+				</li>
+			</ul>
 		</div>
 	</nav>
-	<div class="layout-header">
-		<div class="layout-text-centered">
-			<h1>Odmień swoje wizyty w ulubionej restauracji</h1>
+	<div class="container-fluid layout-header">
+		<div class="row">
 		</div>
-
 	</div>
-	<a href="login.html ">Zaloguj się</a>
+	<div class="container">
+		<div class="row">
+			<h2 id="head-txt">Odmień swoje wizyty w ulubionej restauracji</h2>
+			<p id="head-txt">RESTAURANT BUDDY to aplikacja na wspólne wypady do restauracji. Na pewno nie raz wychodząc ze znajomymi mieliście problem
+				ze wspólnym płaceniem za rachunki w restauracjach. Od teraz nie będzie to już problemem!</p>
+			<p id="head-txt">
+				<a href="#" id="reg-link">Zarejestruj się</a> już dziś!</p>
+		</div>
+	</div>
+
 
 	<!-- jQuery -->
 	<script src="vendor/jquery/jquery-3.2.1.min.js "></script>
