@@ -68,6 +68,21 @@ hr {
 .navbar .nav-item:hover .nav-link {
   color: white;
 }
+.notifications-dismiss {
+  font-style: italic;
+}
+.notifications {
+  padding-left: 0;
+}
+.notifications .notification {
+  color: grey;
+  padding: 10px;
+  border-bottom: thin solid #c0c0c0;
+  list-style: none;
+}
+.notifications .notification:hover {
+  background-color: #eee;
+}
 .full-height {
   display: flex;
   align-items: center;

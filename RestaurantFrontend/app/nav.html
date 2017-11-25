@@ -19,10 +19,27 @@
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Moje konto</a>
+                <a tabindex="0" class="nav-link notification-link" data-toggle="popover" title="Powiadomienia" data-placement="left"
+                    data-trigger="focus">
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                    <span class="badge badge-primary">9</span>
+                </a>
+                <div style="display:none" class="notification-list">
+                    <a class="notifications-dismiss">Wyczyść wszystkie</a>
+                    <ul class="notifications">
+                        <li data-alert_id="1" class="notification">
+                            <span class="notification-message">Messaggio di notifica un po più lungo del normale</span>
+                            <br />
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>
+                </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Wyloguj</a>
+                <a class="nav-link" href="#" alt="Moje konto">Moje konto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" alt="Wyloguj">Wyloguj</a>
             </li>
         </ul>
     </div>
