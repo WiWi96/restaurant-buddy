@@ -1,4 +1,5 @@
 @primary-color: #3cff00;
+@secondary-color: #7e6e50;
 
 @default-background:  rgb(236, 236, 236);
 
@@ -12,10 +13,11 @@ html {
 
 body {
     background: @default-background;
-     height: 100%;
+    height: 100%;
 }
+
 .btn-primary{
-    background-color: rgb(134, 131, 122);  
+    background-color: @primary-color;  
     outline: none;
     border: none; 
     &:hover{
@@ -30,6 +32,7 @@ body {
     position: fixed;
     width: 100%;
     border-bottom: 3px solid @primary-color;
+    z-index: 99;
 
     .navbar-brand {
         .sans-serif-font;
@@ -78,17 +81,27 @@ body {
 }
 
 .login {
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
     background: url("/images/restaurant-back.jpg") no-repeat center center fixed;
     background-size: cover;
     background-color: @default-background;
-    a{
-        color: white;
-    }
-    .vcenter {    
-        background: url("/images/semi-transparent-back.png");
-        padding: 20px;        
+    display: table;
+    padding: 0;
+
+    .login-container {
+        display: table-cell;
+        vertical-align: middle;
+        background: rgba(255,255,255,.7);
+        
+        .login-form {    
+            border-radius: 8px;
+            background-color: rgba(255,255,255,.5);
+            padding: 20px;
+
+            input {
+                background: none;
+                border: none;
+                border-bottom: 3px solid @primary-color;
+            }
+        }
     }
 }

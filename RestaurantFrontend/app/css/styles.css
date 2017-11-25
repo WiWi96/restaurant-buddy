@@ -9,7 +9,7 @@ body {
   height: 100%;
 }
 .btn-primary {
-  background-color: #86837a;
+  background-color: #3cff00;
   outline: none;
   border: none;
 }
@@ -23,6 +23,7 @@ body {
   position: fixed;
   width: 100%;
   border-bottom: 3px solid #3cff00;
+  z-index: 99;
 }
 .navbar .navbar-brand {
   font-family: 'Lato', 'Segoe UI', 'Arial', sans-serif;
@@ -59,17 +60,24 @@ body {
   font-size: 180px;
 }
 .login {
-  display: inline-block;
-  align-items: center;
-  justify-content: center;
   background: url("/images/restaurant-back.jpg") no-repeat center center fixed;
   background-size: cover;
   background-color: #ececec;
+  display: table;
+  padding: 0;
 }
-.login a {
-  color: white;
+.login .login-container {
+  display: table-cell;
+  vertical-align: middle;
+  background: rgba(255, 255, 255, 0.7);
 }
-.login .vcenter {
-  background: url("/images/semi-transparent-back.png");
+.login .login-container .login-form {
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.5);
   padding: 20px;
+}
+.login .login-container .login-form input {
+  background: none;
+  border: none;
+  border-bottom: 3px solid #3cff00;
 }
