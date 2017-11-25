@@ -1,5 +1,5 @@
 $(function () {
-    $("#nav").load("/nav.html", function () {
+    $("#nav").load("../nav.html", function () {
         $("[data-toggle='popover']").popover({
             "html": true,
             "content": $(".notification-list").html()
