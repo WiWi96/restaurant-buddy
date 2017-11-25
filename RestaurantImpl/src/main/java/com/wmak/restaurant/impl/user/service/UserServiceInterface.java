@@ -10,11 +10,9 @@ public interface UserServiceInterface {
 
 	void deleteOrder(String userId, String orderId);
 
-	Order addDishToOrder(String dishId, String orderId);
+	Order addDishToOrder(String userId,String dishId, String orderId);
 
 	Order getOrder(String userId, String orderId);
-	
-	void modifyOrder(String userId, String orderId);
 
 	Dish getDish(String id);
 

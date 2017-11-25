@@ -1,60 +1,22 @@
 package io.swagger.api;
 
-import io.swagger.model.*;
-import io.swagger.api.UserApiService;
-import io.swagger.api.factories.UserApiServiceFactory;
-
 import io.swagger.annotations.ApiParam;
-import io.swagger.jaxrs.*;
-
 import io.swagger.model.Order;
-import java.util.UUID;
 import io.swagger.model.User;
 
-import java.util.List;
-import io.swagger.api.NotFoundException;
-
-import java.io.InputStream;
-
-import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
-import org.glassfish.jersey.media.multipart.FormDataParam;
-
-import javax.servlet.ServletConfig;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 import javax.ws.rs.*;
-import javax.validation.constraints.*;
+
 
 @Path("/user")
 
 
 @io.swagger.annotations.Api(description = "the user API")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-11-24T19:28:58.171Z")
-public class UserApi  {
-   private final UserApiService delegate;
-
-   public UserApi(@Context ServletConfig servletContext) {
-      UserApiService delegate = null;
-
-      if (servletContext != null) {
-         String implClass = servletContext.getInitParameter("UserApi.implementation");
-         if (implClass != null && !"".equals(implClass.trim())) {
-            try {
-               delegate = (UserApiService) Class.forName(implClass).newInstance();
-            } catch (Exception e) {
-               throw new RuntimeException(e);
-            }
-         } 
-      }
-
-      if (delegate == null) {
-         delegate = UserApiServiceFactory.getUserApi();
-      }
-
-      this.delegate = delegate;
-   }
-
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaResteasyEapServerCodegen", date = "2017-11-25T01:07:25.026Z")
+public interface UserApi  {
+   
     @POST
     @Path("/dish/{id}")
     @Consumes({ "application/json", "application/xml" })
@@ -66,11 +28,7 @@ public class UserApi  {
         @io.swagger.annotations.ApiResponse(code = 400, message = "Invalid username supplied", response = User.class),
         
         @io.swagger.annotations.ApiResponse(code = 404, message = "Page not found", response = User.class) })
-    public Response addDishToOrder(@ApiParam(value = "id of dish to add.",required=true) @PathParam("id") String id
-,@Context SecurityContext securityContext)
-    throws NotFoundException {
-        return delegate.addDishToOrder(id,securityContext);
-    }
+    public Response addDishToOrder( @PathParam("id") String id);
     @POST
     @Path("/order")
     @Consumes({ "application/x-www-form-urlencoded" })
@@ -80,11 +38,7 @@ public class UserApi  {
         @io.swagger.annotations.ApiResponse(code = 201, message = "successful operation", response = Order.class),
         
         @io.swagger.annotations.ApiResponse(code = 404, message = "Page not found", response = Order.class) })
-    public Response addUserOrder(@ApiParam(value = "Order" ,required=true) Order order
-,@Context SecurityContext securityContext)
-    throws NotFoundException {
-        return delegate.addUserOrder(order,securityContext);
-    }
+    public Response addUserOrder(@ApiParam(value = "Order" ,required=true) Order order);
     @GET
     @Path("/dishes")
     @Consumes({ "application/x-www-form-urlencoded" })
@@ -94,10 +48,7 @@ public class UserApi  {
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Order.class, responseContainer = "List"),
         
         @io.swagger.annotations.ApiResponse(code = 404, message = "Page not found", response = Order.class, responseContainer = "List") })
-    public Response allUserDishes(@Context SecurityContext securityContext)
-    throws NotFoundException {
-        return delegate.allUserDishes(securityContext);
-    }
+    public Response allUserDishes();
     @GET
     @Path("/orders")
     @Consumes({ "application/x-www-form-urlencoded" })
@@ -107,24 +58,17 @@ public class UserApi  {
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Order.class, responseContainer = "List"),
         
         @io.swagger.annotations.ApiResponse(code = 404, message = "Page not found", response = Order.class, responseContainer = "List") })
-    public Response allUserOrders(@Context SecurityContext securityContext)
-    throws NotFoundException {
-        return delegate.allUserOrders(securityContext);
-    }
+    public Response allUserOrders();
     @DELETE
     @Path("/order/{id}")
     @Consumes({ "application/x-www-form-urlencoded" })
     @Produces({ "application/xml", "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "Delete order", notes = "", response = void.class, tags={ "admin", })
+    @io.swagger.annotations.ApiOperation(value = "Delete order", notes = "", response = Void.class, tags={ "admin", })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 204, message = "User is deleted", response = void.class),
+        @io.swagger.annotations.ApiResponse(code = 204, message = "User is deleted", response = Void.class),
         
-        @io.swagger.annotations.ApiResponse(code = 404, message = "User not found", response = void.class) })
-    public Response deleteUserOrder(@ApiParam(value = "Order id",required=true) @PathParam("id") UUID id
-,@Context SecurityContext securityContext)
-    throws NotFoundException {
-        return delegate.deleteUserOrder(id,securityContext);
-    }
+        @io.swagger.annotations.ApiResponse(code = 404, message = "User not found", response = Void.class) })
+    public Response deleteUserOrder( @PathParam("id") String id);
     @GET
     @Path("/order/{id}")
     @Consumes({ "application/x-www-form-urlencoded" })
@@ -134,11 +78,7 @@ public class UserApi  {
         @io.swagger.annotations.ApiResponse(code = 200, message = "successful operation", response = Order.class),
         
         @io.swagger.annotations.ApiResponse(code = 404, message = "User not found", response = Order.class) })
-    public Response findUserOrder(@ApiParam(value = "Order id",required=true) @PathParam("id") UUID id
-,@Context SecurityContext securityContext)
-    throws NotFoundException {
-        return delegate.findUserOrder(id,securityContext);
-    }
+    public Response findUserOrder( @PathParam("id") String id);
     @GET
     @Path("/dish/{id}")
     @Consumes({ "application/json", "application/xml" })
@@ -150,24 +90,15 @@ public class UserApi  {
         @io.swagger.annotations.ApiResponse(code = 400, message = "Invalid username supplied", response = User.class),
         
         @io.swagger.annotations.ApiResponse(code = 404, message = "Page not found", response = User.class) })
-    public Response getDish(@ApiParam(value = "id of dish to add.",required=true) @PathParam("id") String id
-,@Context SecurityContext securityContext)
-    throws NotFoundException {
-        return delegate.getDish(id,securityContext);
-    }
+    public Response getDish( @PathParam("id") String id);
     @PUT
     @Path("/order/{id}")
     @Consumes({ "application/x-www-form-urlencoded" })
     @Produces({ "application/xml", "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "Update order", notes = "", response = void.class, tags={ "admin", })
+    @io.swagger.annotations.ApiOperation(value = "Update order", notes = "", response = Void.class, tags={ "admin", })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 204, message = "User is updated", response = void.class),
+        @io.swagger.annotations.ApiResponse(code = 204, message = "User is updated", response = Void.class),
         
-        @io.swagger.annotations.ApiResponse(code = 404, message = "User not found", response = void.class) })
-    public Response updateUserOrder(@ApiParam(value = "Order id",required=true) @PathParam("id") UUID id
-,@ApiParam(value = "user" ,required=true) Order user
-,@Context SecurityContext securityContext)
-    throws NotFoundException {
-        return delegate.updateUserOrder(id,user,securityContext);
-    }
+        @io.swagger.annotations.ApiResponse(code = 404, message = "User not found", response = Void.class) })
+    public Response updateUserOrder( @PathParam("id") String id,@ApiParam(value = "user" ,required=true) Order user);
 }
