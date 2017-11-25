@@ -1,9 +1,6 @@
 package com.wmak.restaurant.impl.user.service;
 
-import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.wmak.restaurant.impl.entity.Dish;
@@ -107,26 +104,5 @@ public class UserService implements UserServiceInterface {
 
 	}
 
-	public Object findOrderByID(String id) {
-		OrderEntity orderEntity = orderDao.findOne(id);
-		return orderConverter.entityToModelConverter(orderEntity);
-	}
-
-	public List<Dish> getListOfDishes() {
-		List<Dish> listOfDishes = dishDao.findAll().stream()
-				.map(dishEntity -> dishConverter.entityToModelConverter(dishEntity)).collect(Collectors.toList());
-		return listOfDishes;
-	}
-
-	public List<Order> getListOfOrders() {
-		List<Order> listOfOrders = orderDao.findAll().stream()
-				.map(orderEntity -> orderConverter.entityToModelConverter(orderEntity)).collect(Collectors.toList());
-		return listOfOrders;
-	}
-
-	public Object findDishByID(String id) {
-		DishEntity dishEntity = dishDao.findOne(id);
-		return dishConverter.entityToModelConverter(dishEntity);
-	}
 
 }

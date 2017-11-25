@@ -32,6 +32,9 @@ public class User {
 	@Column(name = "email")
 	private String email;
 
+	public User() {
+	}
+
 	public User(String id, String username, String password, String email, List<Order> ordersOfUser) {
 		super();
 		this.id = id;
@@ -39,8 +42,6 @@ public class User {
 		this.password = password;
 		this.email = email;
 	}
-
-
 
 	public String getId() {
 		return id;

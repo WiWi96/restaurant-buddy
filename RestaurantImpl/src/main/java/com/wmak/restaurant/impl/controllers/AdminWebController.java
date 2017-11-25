@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.wmak.restaurant.impl.admin.service.AdminService;
 import com.wmak.restaurant.impl.entity.Dish;
+import com.wmak.restaurant.impl.entity.User;
 
 
 @Controller
@@ -89,11 +90,11 @@ public class AdminWebController {
 		return "admin/user";
 	}
 
-	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
-	public String getOrderByID(@PathVariable String id, Model model) {
-		model.addAttribute("order", adminService.findOrderByID(id));
-		return "admin/order";
-	}
+//	@RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
+//	public String getOrderByID(@PathVariable String id, Model model) {
+//		model.addAttribute("order", adminService.findOrderByID(id));
+//		return "admin/order";
+//	}
 
 	@RequestMapping(value = "/users", method = RequestMethod.GET)
 	public String getAllUsers(Model model) {
