@@ -1,9 +1,7 @@
 @primary-color: #3cff00;
 @light-gray-color: #bcbcbc;
 @dark-gray-color: #7b7676;
-
-@default-background:  rgb(236, 236, 236);
-
+@default-background: rgb(236, 236, 236);
 .sans-serif-font {
     font-family: 'Lato', 'Segoe UI', 'Arial', sans-serif;
 }
@@ -17,11 +15,28 @@ body {
     height: 100%;
 }
 
-.btn-primary{
-    background-color: @light-gray-color;  
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    .sans-serif-font;
+    font-style: italic;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+hr {
+    border-width: 5px;
+    border-color: @primary-color;
+}
+
+.btn-primary {
+    background-color: @light-gray-color;
     outline: none;
-    border: none; 
-    &:hover{
+    border: none;
+    &:hover {
         background-color: @dark-gray-color;
         outline: none;
         background: @default-background;
@@ -58,6 +73,23 @@ body {
             .nav-link {
                 color: white;
             }
+        }
+    }
+}
+
+.notifications-dismiss {
+    font-style: italic;
+}
+
+.notifications {
+    padding-left: 0;
+    .notification {
+        color: grey;
+        padding: 10px;
+        border-bottom: thin solid #c0c0c0;
+        list-style: none;
+        &:hover {
+            background-color: #eee;
         }
     }
 }
