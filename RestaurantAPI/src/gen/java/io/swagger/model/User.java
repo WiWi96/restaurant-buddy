@@ -1,3 +1,4 @@
+
 /*
  * WMAP application
  *  Manage your restaurant like a boss
@@ -15,14 +16,10 @@ package io.swagger.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.UUID;
-import javax.validation.constraints.*;
 
 /**
  * User
@@ -30,7 +27,7 @@ import javax.validation.constraints.*;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-11-24T19:28:58.171Z")
 public class User   {
   @JsonProperty("id")
-  private UUID id = null;
+  private String id = null;
 
   @JsonProperty("username")
   private String username = null;
@@ -49,7 +46,7 @@ public class User   {
 	  this.listOfOrders = new LinkedList<>();
   }
 
-public User(UUID id, String username, String password, String email, List<Order> listOfOrders) {
+public User(String id, String username, String password, String email, List<Order> listOfOrders) {
 	super();
 	this.id = id;
 	this.username = username;
@@ -58,7 +55,7 @@ public User(UUID id, String username, String password, String email, List<Order>
 	this.listOfOrders = listOfOrders;
 }
 
-public User id(UUID id) {
+public User id(String id) {
     this.id = id;
     return this;
   }
@@ -69,11 +66,11 @@ public User id(UUID id) {
    **/
   @JsonProperty("id")
   @ApiModelProperty(value = "")
-  public UUID getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(UUID id) {
+  public void setId(String id) {
     this.id = id;
   }
 

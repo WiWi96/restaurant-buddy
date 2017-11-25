@@ -22,20 +22,26 @@ public class UserEntity {
 	private String id;
 	private String username;
 	private String password;
+	private String email;
 
-	private List<OrderEntity> ordersOfUser;
+	private List<OrderEntity> listOfOrders;
 
 	public UserEntity() {
-		this.ordersOfUser = new LinkedList<>();
+		this.listOfOrders = new LinkedList<>();
 	}
 
-	public UserEntity(String id, String username, String password, List<OrderEntity> ordersOfUser) {
+
+
+	public UserEntity(String id, String username, String password, String email, List<OrderEntity> ordersOfUser) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
-		this.ordersOfUser = ordersOfUser;
+		this.email = email;
+		this.listOfOrders = ordersOfUser;
 	}
+
+
 
 	public String getId() {
 		return id;
@@ -62,11 +68,20 @@ public class UserEntity {
 	}
 
 	public List<OrderEntity> getOrdersOfUser() {
-		return ordersOfUser;
+		return listOfOrders;
 	}
 
 	public void setOrdersOfUser(List<OrderEntity> ordersOfUser) {
-		this.ordersOfUser = ordersOfUser;
+		this.listOfOrders = ordersOfUser;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 
 }
