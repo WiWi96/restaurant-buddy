@@ -3,42 +3,41 @@ package com.wmak.restaurant.impl.entity;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table(name = "USERS")
-@NamedQuery(name = "User.findAll", query = "SELECT u FROM UserEntity u")
-public class UserEntity {
+@NamedQuery(name = "User.findAll", query = "SELECT u FROM User u")
+public class User {
 
 	@Id
 	@GeneratedValue(generator = "uuid2")
 	@GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
+	@Column(name = "userId")
 	private String id;
+	@Column(name = "username")
 	private String username;
+	@Column(name = "password")
 	private String password;
+	@Column(name = "email")
 	private String email;
 
-	private List<OrderEntity> listOfOrders;
-
-	public UserEntity() {
-		this.listOfOrders = new LinkedList<>();
-	}
-
-
-
-	public UserEntity(String id, String username, String password, String email, List<OrderEntity> ordersOfUser) {
+	public User(String id, String username, String password, String email, List<Order> ordersOfUser) {
 		super();
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.email = email;
-		this.listOfOrders = ordersOfUser;
 	}
 
 
@@ -67,13 +66,6 @@ public class UserEntity {
 		this.password = password;
 	}
 
-	public List<OrderEntity> getOrdersOfUser() {
-		return listOfOrders;
-	}
-
-	public void setOrdersOfUser(List<OrderEntity> ordersOfUser) {
-		this.listOfOrders = ordersOfUser;
-	}
 
 	public String getEmail() {
 		return email;

@@ -1,8 +1,10 @@
 package com.wmak.restaurant.impl.user.service;
 
 import java.util.List;
-import io.swagger.model.Dish;
-import io.swagger.model.Order;
+
+import com.wmak.restaurant.impl.entity.Dish;
+import com.wmak.restaurant.impl.entity.Order;
+
 
 public interface UserServiceInterface {
 
