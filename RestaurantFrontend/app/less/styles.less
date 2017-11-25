@@ -15,8 +15,20 @@ body {
     height: 100%;
 }
 
-.btn-primary {
-    background-color: @light-gray-color;
+h1, h2, h3, h4, h5, h6 {
+    .sans-serif-font;
+    font-style: italic;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+hr {
+    border-width: 5px;
+    border-color: @primary-color;
+}
+
+.btn-primary{
+    background-color: @light-gray-color;  
     outline: none;
     border: none;
     &:hover {
@@ -33,6 +45,11 @@ body {
         height: 100%;
         cursor: pointer;
     }
+}
+
+.container {
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .btn-secondary {
@@ -71,7 +88,6 @@ body {
         font-size: 1rem;
         text-transform: uppercase;
         font-weight: bold;
-        margin: 0 auto;
         &:hover {
             text-shadow: 3px 3px 0 @primary-color;
         }        

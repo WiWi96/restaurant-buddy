@@ -8,6 +8,21 @@ body {
   background: #ececec;
   height: 100%;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lato', 'Segoe UI', 'Arial', sans-serif;
+  font-style: italic;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+hr {
+  border-width: 5px;
+  border-color: #3cff00;
+}
 .btn-primary {
   background-color: #bcbcbc;
   outline: none;
@@ -17,6 +32,7 @@ body {
   background-color: #7b7676;
   outline: none;
   background: #ececec;
+<<<<<<< HEAD
   height: 100%;
   cursor: pointer;
 }
@@ -24,6 +40,8 @@ body {
   background-color: #8f8d8d !important;
   box-shadow: none!important;
   background: #ececec;
+=======
+>>>>>>> ajax
   height: 100%;
   cursor: pointer;
 }
@@ -49,6 +67,10 @@ body {
 .log {
   margin-right: 5px;
   margin-left: 10px;
+}
+.container {
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 .navbar {
   position: fixed;
