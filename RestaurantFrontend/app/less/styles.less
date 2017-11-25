@@ -41,10 +41,52 @@ hr {
         outline: none;
         background: @default-background;
         height: 100%;
+        cursor: pointer;
+    }
+    &:active {
+        background-color: @light-gray-color !important;
+        box-shadow: none!important;
+        background: @default-background;
+        height: 100%;
+        cursor: pointer;
     }
 }
 
+<<<<<<< HEAD
+=======
+.container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.btn-secondary {
+    background-color: @primary-color;
+    outline: none;
+    border: none;
+    &:hover {
+        background-color: @dark-gray-color;
+        outline: none;
+        background: #ceffbf;
+        height: 100%;
+        cursor: pointer;
+    }
+    &:active {
+        background-color: @primary-color !important;
+        box-shadow: none !important;
+        background: @default-background;
+        height: 100%;
+        cursor: pointer;
+    }
+}
+
+.log {
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+>>>>>>> header
 .navbar {
+    min-height: 60px;
     position: fixed;
     width: 100%;
     border-bottom: 3px solid @primary-color;
@@ -59,13 +101,6 @@ hr {
             text-shadow: 3px 3px 0 @primary-color;
         }
     }
-    &:focus {
-        outline: none !important;
-    }
-    &:active {
-        outline: none;
-        border: none;
-    }
     .nav-item {
         &:hover {
             background-color: @primary-color;
@@ -77,6 +112,7 @@ hr {
     }
 }
 
+<<<<<<< HEAD
 .notifications-dismiss {
     font-style: italic;
 }
@@ -92,6 +128,12 @@ hr {
             background-color: #eee;
         }
     }
+=======
+.centered-text-layout {
+    margin: 0 auto;
+    max-width: 900px;
+    text-align: center;
+>>>>>>> header
 }
 
 .full-height {
@@ -104,6 +146,31 @@ hr {
 .big-icon {
     color: @primary-color;
     font-size: 180px;
+}
+
+#head-txt {
+    font-style: normal;
+    color: black;
+    .a {
+        color: @primary-color;
+    }
+}
+#logo-header {
+   // margin-bottom: 80%;
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+    text-align: center;
+}
+#reg-link {
+    color: #56b638;
+}
+
+.layout-header {
+    background: url("/images/restaurant-back-head.jpg") no-repeat center center fixed;
+    background-size: cover;
+    background-color: @default-background;
+    height: 60%;
 }
 
 .login {
