@@ -1,9 +1,7 @@
 @primary-color: #3cff00;
 @light-gray-color: #bcbcbc;
 @dark-gray-color: #7b7676;
-
-@default-background:  rgb(236, 236, 236);
-
+@default-background: rgb(236, 236, 236);
 .sans-serif-font {
     font-family: 'Lato', 'Segoe UI', 'Arial', sans-serif;
 }
@@ -17,16 +15,21 @@ body {
     height: 100%;
 }
 
-.btn-primary{
-    background-color: @light-gray-color;  
+.btn-primary {
+    background-color: @light-gray-color;
     outline: none;
-    border: none; 
-    &:hover{
+    border: none;
+    &:hover {
         background-color: @dark-gray-color;
         outline: none;
-    background: @default-background;
-    height: 100%;
+        background: @default-background;
+        height: 100%;
     }
+}
+
+.log {
+    margin-right: 5px;
+    margin-left: 10px;
 }
 
 .navbar {
@@ -34,40 +37,30 @@ body {
     width: 100%;
     border-bottom: 3px solid @primary-color;
     z-index: 99;
-
     .navbar-brand {
         .sans-serif-font;
         letter-spacing: 4px;
         font-size: 1rem;
         text-transform: uppercase;
         font-weight: bold;
-
+        margin: 0 auto;
         &:hover {
             text-shadow: 3px 3px 0 @primary-color;
-        }
+        }        
     }
     
-    &:focus{
-        outline: none !important;      
-    }
-    
-    &:active{
-    
-        outline: none;
-        border: none;
-    }
-
     .nav-item {
         &:hover {
             background-color: @primary-color;
             border-radius: 3px;
-
             .nav-link {
                 color: white;
             }
         }
     }
 }
+
+
 
 .full-height {
     display: flex;
@@ -87,17 +80,14 @@ body {
     background-color: @default-background;
     display: table;
     padding: 0;
-
     .login-container {
         display: table-cell;
         vertical-align: middle;
-        background: rgba(255,255,255,.7);
-        
-        .login-form {    
+        background: rgba(255, 255, 255, .7);
+        .login-form {
             border-radius: 8px;
             background-color: white;
             padding: 20px;
-
             input {
                 background: none;
                 border: none;
