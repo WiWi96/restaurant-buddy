@@ -6,7 +6,7 @@ $(function () {
                 "Access-Control-Allow-Origin": "*"
             },
             contentType: "application/json; charset=utf-8",
-            url: "//localhost:8888",
+            url: "//10.4.0.117:8080/admin/users",
         }).done(function (res) {
             $("#userList").html("Działam hahaha!");
         }).fail(function (res) {
