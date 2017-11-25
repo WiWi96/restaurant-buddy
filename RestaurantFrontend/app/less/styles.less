@@ -1,8 +1,6 @@
 @primary-color: #3cff00;
 @secondary-color: #7e6e50;
-
-@default-background:  rgb(236, 236, 236);
-
+@default-background: rgb(236, 236, 236);
 .sans-serif-font {
     font-family: 'Lato', 'Segoe UI', 'Arial', sans-serif;
 }
@@ -16,15 +14,15 @@ body {
     height: 100%;
 }
 
-.btn-primary{
-    background-color: @primary-color;  
+.btn-primary {
+    background-color: @primary-color;
     outline: none;
-    border: none; 
-    &:hover{
+    border: none;
+    &:hover {
         background-color: rgb(53, 52, 52) !important;
         outline: none;
-    background: @default-background;
-    height: 100%;
+        background: @default-background;
+        height: 100%;
     }
 }
 
@@ -33,34 +31,27 @@ body {
     width: 100%;
     border-bottom: 3px solid @primary-color;
     z-index: 99;
-
     .navbar-brand {
         .sans-serif-font;
         letter-spacing: 4px;
         font-size: 1rem;
         text-transform: uppercase;
         font-weight: bold;
-
         &:hover {
             text-shadow: 3px 3px 0 @primary-color;
         }
     }
-    
-    &:focus{
-        outline: none !important;      
+    &:focus {
+        outline: none !important;
     }
-    
-    &:active{
-    
+    &:active {
         outline: none;
         border: none;
     }
-
     .nav-item {
         &:hover {
             background-color: @primary-color;
             border-radius: 3px;
-
             .nav-link {
                 color: white;
             }
@@ -86,17 +77,14 @@ body {
     background-color: @default-background;
     display: table;
     padding: 0;
-
     .login-container {
         display: table-cell;
         vertical-align: middle;
-        background: rgba(255,255,255,.7);
-        
-        .login-form {    
+        background: rgba(255, 255, 255, .7);
+        .login-form {
             border-radius: 8px;
-            background-color: rgba(255,255,255,.5);
+            background-color: rgba(255, 255, 255, .5);
             padding: 20px;
-
             input {
                 background: none;
                 border: none;
