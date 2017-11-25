@@ -1,4 +1,15 @@
-@default-background:  rgb(161, 161, 161);
+@primary-color: #3cff00;
+
+@default-background:  rgb(236, 236, 236);
+
+.sans-serif-font {
+    font-family: 'Lato', 'Segoe UI', 'Arial', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
 body {
     background: blue;
      
@@ -10,6 +21,25 @@ body {
     &:hover{
         background-color: rgb(53, 52, 52) !important;
         outline: none;
+    background: @default-background;
+    height: 100%;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    border-bottom: 3px solid @primary-color;
+
+    .navbar-brand {
+        .sans-serif-font;
+        letter-spacing: 4px;
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        &:hover {
+            text-shadow: 3px 3px 0 @primary-color;
+        }
     }
     
     &:focus{
@@ -21,6 +51,29 @@ body {
         outline: none;
         border: none;
     }
+
+    .nav-item {
+        &:hover {
+            background-color: @primary-color;
+            border-radius: 3px;
+
+            .nav-link {
+                color: white;
+            }
+        }
+    }
+}
+
+.full-height {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.big-icon {
+    color: @primary-color;
+    font-size: 180px;
 }
 
 .login {

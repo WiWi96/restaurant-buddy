@@ -16,6 +16,10 @@ body {
   background-color: #86837a;
   outline: none;
   border: none;
+.navbar {
+  position: fixed;
+  width: 100%;
+  border-bottom: 3px solid #3cff00;
 }
 .navbar .navbar-brand {
   font-family: 'Lato', 'Segoe UI', 'Arial', sans-serif;
@@ -54,6 +58,33 @@ body {
 .btn-primary:active {
   outline: none;
   border: none;
+}
+.navbar .navbar-brand {
+  font-family: 'Lato', 'Segoe UI', 'Arial', sans-serif;
+  letter-spacing: 4px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.navbar .navbar-brand:hover {
+  text-shadow: 3px 3px 0 #3cff00;
+}
+.navbar .nav-item:hover {
+  background-color: #3cff00;
+  border-radius: 3px;
+}
+.navbar .nav-item:hover .nav-link {
+  color: white;
+}
+.full-height {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.big-icon {
+  color: #3cff00;
+  font-size: 180px;
 }
 .login {
   align-items: center;
