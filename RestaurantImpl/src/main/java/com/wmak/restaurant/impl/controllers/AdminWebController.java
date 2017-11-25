@@ -31,14 +31,14 @@ public class AdminWebController {
 		return "admin/addUser";
 	}
 
-	@RequestMapping(value = "/updateDish/{id}", method = RequestMethod.PUT)
-	public String updateDish(Model model, String id) {
-		if (adminService.findDishByID(id) == null) {
-			return "error404/dishNotFound";
+	@RequestMapping(value = "/updateUser/{id}", method = RequestMethod.PUT)
+	public String updateUser(@PathVariable String id, Model model) {
+		if (adminService.findUserByID(id) == null) {
+			return "error404/userNotFound";
 		}
-		Dish dish = adminService.findDishByID(id);
-		model.addAttribute(dish);
-		return "admin/addDish";
+		User user = adminService.findUserByID(id);
+		model.addAttribute("user", user);
+		return "admin/addUser";
 	}
 
 	@RequestMapping(value = "/updateDish/{id}", method = RequestMethod.PUT)
