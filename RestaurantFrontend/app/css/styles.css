@@ -8,21 +8,6 @@ body {
   background: #ececec;
   height: 100%;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: 'Lato', 'Segoe UI', 'Arial', sans-serif;
-  font-style: italic;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-hr {
-  border-width: 5px;
-  border-color: #3cff00;
-}
 .btn-primary {
   background-color: #bcbcbc;
   outline: none;
@@ -33,10 +18,6 @@ hr {
   outline: none;
   background: #ececec;
   height: 100%;
-}
-.container {
-  padding-top: 80px;
-  padding-bottom: 80px;
 }
 .navbar {
   position: fixed;
