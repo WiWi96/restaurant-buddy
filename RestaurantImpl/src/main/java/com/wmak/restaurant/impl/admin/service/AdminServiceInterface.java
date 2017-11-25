@@ -2,9 +2,9 @@ package com.wmak.restaurant.impl.admin.service;
 
 import java.util.List;
 
-import io.swagger.model.Dish;
-import io.swagger.model.Order;
-import io.swagger.model.User;
+import com.wmak.restaurant.impl.entity.Dish;
+import com.wmak.restaurant.impl.entity.Order;
+import com.wmak.restaurant.impl.entity.User;
 
 public interface AdminServiceInterface {
 

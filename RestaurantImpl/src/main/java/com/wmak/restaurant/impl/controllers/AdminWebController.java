@@ -8,9 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.wmak.restaurant.impl.admin.service.AdminService;
+import com.wmak.restaurant.impl.entity.Dish;
 
-import io.swagger.model.Dish;
-import io.swagger.model.User;
 
 @Controller
 @RequestMapping(value = "/admin")
