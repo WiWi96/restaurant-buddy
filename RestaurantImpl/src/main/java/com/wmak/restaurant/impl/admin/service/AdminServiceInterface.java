@@ -12,7 +12,7 @@ public interface AdminServiceInterface {
 
 	User findUserByID(String id);
 
-	void deleteUser(User user);
+	void deleteUser(String id);
 
 	void modifyUser(User user);
 
@@ -20,14 +20,14 @@ public interface AdminServiceInterface {
 
 	Dish findDishByID(String id);
 
-	void deleteDishFromMenu(Dish dish);
+	void deleteDishFromMenu(String id);
 
 	void modifyDish(Dish dish);
-	
+
 	Order findOrderByID(String id);
-	
+
 	void deleteOrder(String id);
-	
+
 	List<User> getListOfUsers();
 
 	List<Order> getListOfOrders();

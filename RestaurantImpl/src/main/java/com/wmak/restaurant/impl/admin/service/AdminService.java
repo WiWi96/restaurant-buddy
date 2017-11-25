@@ -35,8 +35,7 @@ public class AdminService implements AdminServiceInterface {
 	}
 
 	@Override
-	public void deleteUser(User user) {
-		String id = user.getId();
+	public void deleteUser(String id) {
 		userDao.delete(id);
 	}
 
@@ -52,14 +51,19 @@ public class AdminService implements AdminServiceInterface {
 	}
 
 	@Override
-	public void deleteDishFromMenu(Dish dish) {
-		String id = dish.getId();
+	public void deleteDishFromMenu(String id) {
 		userDao.delete(id);
 	}
 
 	@Override
 	public void modifyDish(Dish dish) {
 		dishDao.updateDish(dish.getId(), dish.getName(), dish.getCategory(), dish.getPrice());
+	}
+
+	@Override
+	public void deleteOrder(String id) {
+		orderDao.delete(id);
+
 	}
 
 	@Override
@@ -73,22 +77,16 @@ public class AdminService implements AdminServiceInterface {
 		User user = userDao.findOne(id);
 		return user;
 	}
-	
-	@Override
+
 	public Order findOrderByID(String id) {
 		Order order = orderDao.findOne(id);
 		return order;
 	}
 
 	@Override
-	public void deleteOrder(String id) {
-		orderDao.delete(id);
-
-	}
-	
-	@Override
 	public List<User> getListOfUsers() {
 		return userDao.findAll();
+
 	}
 
 	@Override
@@ -98,12 +96,15 @@ public class AdminService implements AdminServiceInterface {
 
 	@Override
 	public List<Order> getListOfOrders() {
+
 		 return orderDao.findAll();
+
 	}
 
 	@Override
 	public List<Dish> getListOfDishesByCategory(String category) {
 		return dishDao.getDishByCategory(category);
+
 	}
 
 }
